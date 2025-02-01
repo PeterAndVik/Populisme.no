@@ -75,11 +75,11 @@ missing_cols = [col for col in group1_cols + group2_cols if col not in df_polls.
 if missing_cols:
     print(f"Warning: Missing columns - {missing_cols}")
 else:
-    df_polls['Group1'] = df_polls[group1_cols].sum(axis=1)
-    df_polls['Group2'] = df_polls[group2_cols].sum(axis=1)
+    df_polls['Somewheres'] = df_polls[group1_cols].sum(axis=1)
+    df_polls['Anywheres'] = df_polls[group2_cols].sum(axis=1)
 
 # Create an interactive Plotly graph
-fig = px.line(df_polls, x=df_polls.index, y=['Group1', 'Group2'],
+fig = px.line(df_polls, x=df_polls.index, y=['Somewheres', 'Anywheres'],
               labels={"value": "Percentage Support", "variable": "Party Group"},
               title="Aggregated Political Party Support Over Time")
 
