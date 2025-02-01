@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Strømpris</title>
+</head>
+<body>
+    <h2>Strømpris Over Tid</h2>
+    <div id="strompris-graph"></div>
+
+    <script>
+        var trace1 = {
+            x: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun'],
+            y: [120, 150, 180, 200, 220, 250],
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {color: 'red'}
+        };
+
+        Plotly.newPlot('strompris-graph', [trace1], {title: 'Strømpris Over Tid', xaxis: {title: 'Måneder'}, yaxis: {title: 'Pris (øre/kWh)'}});
+    </script>
+</body>
+</html>
