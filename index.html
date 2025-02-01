@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hvordan strømprisen gjør Norge mer populistisk</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <!-- Ensures script runs after page loads -->
 </head>
 <body>
 
@@ -18,20 +19,9 @@
     <!-- Graphs Section -->
     <section class="graphs">
         <div class="container">
-            <h2>Strømprisen</h2>
-            <div class="graph-card">
-                <iframe src="strompris.html"></iframe>
-            </div>
-
-            <h2>Politisk Oppslutning</h2>
-            <div class="graph-card">
-                <iframe src="oppslutning.html"></iframe>
-            </div>
-
-            <!-- Test Graph Section (For Your Generated Graph) -->
             <h2>Testgraf (Random Data)</h2>
             <div class="graph-card">
-                <iframe src="graphs/graph1.html" width="800" height="600"></iframe>
+                <iframe id="testGraph" src="graphs/graph1.html" width="800" height="600"></iframe>
             </div>
         </div>
     </section>
