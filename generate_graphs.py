@@ -84,6 +84,6 @@ fig = px.line(df_polls, x=df_polls.index, y=['Group1', 'Group2'],
               title="Aggregated Political Party Support Over Time")
 
 # Save as an interactive HTML file (in the root folder for GitHub Pages)
-fig.write_html("graph1.html")
+fig.write_html("graphs/graph1.html")  # Saves in graphs/ folder
 
 print("Graph updated successfully!")
