@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 # Define paths
-RAW_DATA_PATH = "../data/raw/ssb_expenditure_raw.csv"
+RAW_DATA_PATH = "data/raw/ssb_expenditure_raw.csv"
 
 # Define the API endpoint
 url = "https://data.ssb.no/api/v0/no/table/10487/"
