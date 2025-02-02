@@ -1,0 +1,32 @@
+name: Update Graphs
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs every day at 12:00 UTC
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update_graphs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install pandas plotly
+
+      - name: Run script
+        run: python generate_graphs.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add graphs/graph1.html
+          git commit -m "Updated graph automatically" || echo "No changes to commit"
+          git push
