@@ -27,7 +27,7 @@ jobs:
 
       - name: Commit and push changes
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}  # Make sure this matches the secret name exactly
+          GH_PAT: ${{ secrets.GH_PAT }}  # Use the Personal Access Token stored in GitHub Secrets
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
