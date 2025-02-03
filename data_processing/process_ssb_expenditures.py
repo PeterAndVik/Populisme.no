@@ -5,7 +5,7 @@ import plotly.express as px
 # 📌 Processing Script (data_processing/process_ssb_expenditure.py)
 RAW_FILE = "data/raw/ssb_expenditure_raw.csv"
 PROCESSED_FILE = "data/processed/ssb_expenditure_clean.csv"
-GRAPH_HTML_FILE = "web/graphs/ssb_expenditure.html"
+GRAPH_HTML_FILE = "graphs/ssb_expenditure.html"
 
 if not os.path.exists(RAW_FILE):
     print(f"⚠️ Raw file not found: {RAW_FILE}")
