@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Legger til prosjektets rotmappe i sys.path slik at scrapers kan importeres riktig
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import pandas as pd
 from scrapers.base_scraper import BaseScraper
 
