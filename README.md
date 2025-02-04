@@ -105,7 +105,7 @@ python scrapers/my_new_scraper.py
 
 ✅ If successful, it should create a file in `data/raw/`.
 
-📌 How to Add a New Data Processing Script (Step by Step)
+## 📌 How to Add a New Data Processing Script (Step by Step)
 
 After adding a scraper, you need to clean the data and generate graphs.
 
