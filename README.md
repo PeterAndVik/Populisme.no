@@ -1,9 +1,9 @@
-📌 Updated README for Populisme.no
+# 📌 Updated README for Populisme.no
 
 This guide explains you need to add a new scraper and processing script.
 It includes detailed explanations and step-by-step instructions to avoid confusion.
 
-📌 Table of Contents
+## 📌 Table of Contents
 
 - Project Structure
 - How to Add a New Scraper
@@ -13,7 +13,7 @@ It includes detailed explanations and step-by-step instructions to avoid confusi
 - Automation: Running All Scrapers
 - Troubleshooting
 
-📌 Project Structure
+## 📌 Project Structure
 
 The project is organized into clear folders:
 
