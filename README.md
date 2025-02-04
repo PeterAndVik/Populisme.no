@@ -47,17 +47,18 @@ Populisme.no/
 │
 └── README.md                       # 📌 YOU ARE HERE! 🎉
 ```
-
-📌 How to Add a New Scraper
-
+## 📌 How to Add a New Scraper
 If you want to scrape new data, follow these steps.
 
-### 1️⃣ Create a New Scraper File
-
+### **1️⃣ Create a New Scraper File**
 - Go to `scrapers/`
 - Create a new Python file (e.g., `my_new_scraper.py`).
 
-### 2️⃣ Use the Scraper Template
+## **2️⃣ Use the Correct Scraper Type**
+`BaseScraper` now supports **three types** of scrapers:
+1. **API Scrapers** → Use `use_api=True`
+2. **HTML Table Scrapers** → Use `use_api=False, use_csv=False`
+3. **CSV Scrapers** → Use `use_api=False, use_csv=True`
 
 Copy this into your new scraper file (`scrapers/my_new_scraper.py`) and read the comments carefully:
 
@@ -80,7 +81,7 @@ class MyNewScraper(BaseScraper):
     PAYLOAD = {}  # CHANGE THIS IF USING AN API
 
     def __init__(self):
-        super().__init__("my_new_scraper_raw.csv", use_api=True)  # ✅ CHANGE THE FILE NAME
+        super().__init__("my_new_scraper_raw.csv", use_api=True)  # ✅ CHANGE THE FILE NAME AND SCRAPER TYPE
 
     def process_data(self, data):
         df = pd.DataFrame(data)  # MODIFY THIS BASED ON DATA STRUCTURE
