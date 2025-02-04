@@ -65,9 +65,10 @@ Copy this into your new scraper file (`scrapers/my_new_scraper.py`) and read the
 import sys
 import os
 import pandas as pd
-from scrapers.base_scraper import BaseScraper
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from scrapers.base_scraper import BaseScraper
 
 class MyNewScraper(BaseScraper):
     """
