@@ -30,7 +30,7 @@ Populisme.no/
 │   ├── poll_scraper.py            # Example scraper (Polls)
 │
 ├── data/                          
-│   ├── raw/                       # Raw scraped data (CSV)
+│   ├── raw/                        # Raw scraped data (CSV)
 │   ├── processed/                  # Cleaned data (CSV)
 │
 ├── data_processing/                # Data cleaning & visualization
