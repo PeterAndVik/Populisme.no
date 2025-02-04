@@ -146,7 +146,7 @@ print(f"📊 Graph saved as HTML: {GRAPH_HTML_FILE}")
 fig.show()
 ```
 
-📌 Automation: Running All Scrapers
+## 📌 Automation: Running All Scrapers
 (work in progress)
 
 To run all scrapers at once, use:
@@ -157,7 +157,7 @@ python automation/run_pipeline.py
 
 🚀 This will fetch data for all scrapers and save raw CSVs in `data/raw/`.
 
-📌 Troubleshooting (add more troubleshooting solutions if you find them here)
+## 📌 Troubleshooting (add more troubleshooting solutions if you find them here)
 
 **"ModuleNotFoundError: No module named 'scrapers'"**
 
