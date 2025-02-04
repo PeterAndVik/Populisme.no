@@ -1,6 +1,7 @@
 {
     "graphs": [
         "aggregated_poll_trends.html",
+        "immigration.html",
         "poll_trends.html",
         "ssb_expenditure.html"
     ]
