@@ -50,6 +50,7 @@ Populisme.no/
 │
 └── README.md                       # 📌 YOU ARE HERE! 🎉
 ```
+
 ## 📌 How to Add a New Scraper
 If you want to scrape new data, follow these steps.
 
