@@ -9,8 +9,13 @@ class BaseScraper:
     """
     RAW_DATA_DIR = "data/raw/"
 
-    def __init__(self, filename):
+    def __init__(self, filename, use_api=True):
+        """
+        :param filename: The name of the file where raw data is saved.
+        :param use_api: Set to True for API scrapers, False for HTML scrapers.
+        """
         self.filepath = os.path.join(self.RAW_DATA_DIR, filename)
+        self.use_api = use_api  # ✅ Determines which fetch method to use
 
     def fetch_api_data(self, url, payload=None):
         """ Sends a request to an API and returns the JSON response. """
@@ -46,7 +51,11 @@ class BaseScraper:
 
     def run(self):
         """ Runs the scraper: fetch data, process it, and save. """
-        data = self.fetch_html_table(self.URL)  # Fetch HTML table
+        if self.use_api:
+            data = self.fetch_api_data(self.URL, self.PAYLOAD)  # ✅ API scrapers
+        else:
+            data = self.fetch_html_table(self.URL)  # ✅ HTML scrapers
+        
         if data is not None:
             df = self.process_data(data)
             if df is not None:

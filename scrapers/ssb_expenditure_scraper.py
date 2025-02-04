@@ -33,7 +33,7 @@ class SSBExpenditureScraper(BaseScraper):
     }
 
     def __init__(self):
-        super().__init__("ssb_expenditure_raw.csv")
+        super().__init__("ssb_expenditure_raw.csv", use_api=True)  # ✅ Tell BaseScraper this is an API scraper
 
     def process_data(self, data):
         """ Konverterer JSON til en DataFrame. """
