@@ -30,7 +30,7 @@ Populisme.no/
 │   ├── poll_scraper.py            # Example scraper (Polls)
 │
 ├── data/                          
-│   ├── raw/                       # Raw scraped data (CSV)
+│   ├── raw/                        # Raw scraped data (CSV)
 │   ├── processed/                  # Cleaned data (CSV)
 │
 ├── data_processing/                # Data cleaning & visualization
@@ -165,5 +165,5 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 🚀 Now You’re Ready to Contribute!
 
-🎉 Adding new scrapers and processing scripts is now beginner-friendly!
+🎉 Adding new scrapers and processing scripts is now possible!
 Follow the guide, and you can scrape, clean, and visualize new data without breaking anything. 🚀
