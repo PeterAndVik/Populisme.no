@@ -58,7 +58,7 @@ If you want to scrape new data, follow these steps.
 - Go to `scrapers/`
 - Create a new Python file (e.g., `my_new_scraper.py`).
 
-## **2️⃣ Use the Correct Scraper Type**
+### **2️⃣ Use the Correct Scraper Type**
 `BaseScraper` now supports **three types** of scrapers:
 1. **API Scrapers** → Use `use_api=True`
 2. **HTML Table Scrapers** → Use `use_api=False, use_csv=False`
