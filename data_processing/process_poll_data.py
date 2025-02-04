@@ -18,6 +18,20 @@ df_polls = pd.read_csv(RAW_FILE)
 # Rename the first column for clarity
 df_polls.rename(columns={'Unnamed: 0': 'Month'}, inplace=True)
 
+# ✅ Rename the first column for clarity
+df_polls.rename(columns={'Unnamed: 0': 'Month'}, inplace=True)
+
+# ✅ Manually Replace Corrupted Norwegian Letters in Column Names
+column_fix_map = {
+    "HÃ¸yre": "Høyre",
+    "RÃ¸dt": "Rødt",
+    "KrF": "KrF",  # This one is correct but keeping it for reference
+    "Venstre": "Venstre",  # Also correct, but keeping it structured
+    "Andre": "Andre"  # No change needed, but listed for completeness
+}
+
+df_polls.rename(columns=column_fix_map, inplace=True)
+
 # Mapping Norwegian month names to English
 norwegian_months = {
     "Januar": "January", "Februar": "February", "Mars": "March",

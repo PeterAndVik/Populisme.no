@@ -19,8 +19,8 @@ df_filtered = df_polls.loc[df_polls.index >= pd.Timestamp('2014-01-01')].copy()
 
 # --- Define Party Groups ---
 # Define the party columns for each group
-group1_cols = ['Ap', 'HÃ¸yre', 'MDG', 'Venstre']
-group2_cols = ['Frp', 'Sp','RÃ¸dt','Andre']
+group1_cols = ['Ap', 'Høyre', 'MDG', 'Venstre']
+group2_cols = ['Frp', 'Sp','Rødt','Andre']
 
 # Sum the percentages for each group (row-wise).
 df_filtered['Anywheres (Ap,H,MDG,V)'] = df_filtered[group1_cols].sum(axis=1, min_count=1)
