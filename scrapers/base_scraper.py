@@ -5,17 +5,19 @@ import os
 class BaseScraper:
     """
     Base class for all scrapers.
-    Supports API requests and HTML table scraping.
+    Supports API requests, HTML table scraping, and CSV downloads.
     """
     RAW_DATA_DIR = "data/raw/"
 
-    def __init__(self, filename, use_api=True):
+    def __init__(self, filename, use_api=True, use_csv=False):
         """
         :param filename: The name of the file where raw data is saved.
         :param use_api: Set to True for API scrapers, False for HTML scrapers.
+        :param use_csv: Set to True for direct CSV downloads.
         """
         self.filepath = os.path.join(self.RAW_DATA_DIR, filename)
-        self.use_api = use_api  # ✅ Determines which fetch method to use
+        self.use_api = use_api
+        self.use_csv = use_csv  # ✅ New flag for CSV scrapers
 
     def fetch_api_data(self, url, payload=None):
         """ Sends a request to an API and returns the JSON response. """
@@ -39,6 +41,15 @@ class BaseScraper:
             print(f"🚨 Failed to scrape HTML tables: {e}")
             return None
 
+    def fetch_csv_data(self, url):
+        """ Downloads a CSV file and returns it as a DataFrame. """
+        try:
+            df = pd.read_csv(url, sep=';', decimal=',', encoding="ISO-8859-1")
+            return df
+        except Exception as e:
+            print(f"🚨 Failed to download CSV data: {e}")
+            return None
+
     def process_data(self, data):
         """ Must be overridden in each scraper to process data. """
         raise NotImplementedError("process_data() must be implemented in the subclass")
@@ -53,6 +64,8 @@ class BaseScraper:
         """ Runs the scraper: fetch data, process it, and save. """
         if self.use_api:
             data = self.fetch_api_data(self.URL, self.PAYLOAD)  # ✅ API scrapers
+        elif self.use_csv:
+            data = self.fetch_csv_data(self.URL)  # ✅ CSV scrapers
         else:
             data = self.fetch_html_table(self.URL)  # ✅ HTML scrapers
         

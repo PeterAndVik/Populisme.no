@@ -1,10 +1,10 @@
 import sys
 import os
+import pandas as pd
 
-# Legger til prosjektets rotmappe i sys.path slik at scrapers kan importeres riktig
+# ✅ Ensure correct paths for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-import pandas as pd
 from scrapers.base_scraper import BaseScraper
 
 class PollScraper(BaseScraper):
@@ -15,12 +15,20 @@ class PollScraper(BaseScraper):
     URL = "https://www.pollofpolls.no/?cmd=Stortinget&do=visallesnitt"
 
     def __init__(self):
-        super().__init__("poll_data_raw.csv")
+        # ✅ Tell `BaseScraper` to use HTML scraping (not API or CSV)
+        super().__init__("poll_data_raw.csv", use_api=False, use_csv=False)
 
     def process_data(self, df):
-        """ Prepares the poll data for saving (no major cleaning yet). """
-        # Rename the first column (assumed to be the month)
+        """
+        ✅ Processes the polling data from HTML tables.
+        """
+        if df is None or df.empty:
+            print("⚠️ No data was extracted from the HTML table.")
+            return None
+
+        # ✅ Rename the first column (assumed to be the month)
         df.rename(columns={'Unnamed: 0': 'Month'}, inplace=True)
+
         return df
 
 if __name__ == "__main__":
