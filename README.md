@@ -22,7 +22,7 @@ Populisme.no/
 │
 ├── automation/                   # Automates scraping and processing
 │   ├── run_pipeline.py           # Runs all scrapers automatically
-    ├── update_graphs.json        # Updates list of graphs on flere grafer 
+│    ├── update_graphs.json        # Updates list of graphs on flere grafer 
 │
 ├── scrapers/                      # Scrapers to collect data
 │   ├── __init__.py                # Makes this folder a package
