@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flere Grafer</title>
     <link rel="stylesheet" href="static/css/styles.css">
+    <script defer src="static/js/load_graphs.js"></script> <!-- ✅ Load graphs dynamically -->
 </head>
 <body>
 
@@ -16,13 +17,10 @@
         </div>
     </header>
 
-    <!-- Graph List -->
+    <!-- Graph List (Will be filled dynamically) -->
     <section class="graphs">
-        <div class="container">
-            <h2>Statens utgifter over tid</h2>
-            <div class="graph-card">
-                <iframe src="graphs/ssb_expenditure.html" width="800" height="600"></iframe>
-            </div>
+        <div class="container" id="graphs-container">
+            <!-- ✅ Graphs will be inserted here dynamically -->
         </div>
     </section>
 
