@@ -1,8 +1,7 @@
 {
     "graphs": [
-        "graph1.html",
-        "ssb_expenditure.html",
+        "aggregated_poll_trends.html",
         "poll_trends.html",
-        "aggregated_poll_trends.html"
+        "ssb_expenditure.html"
     ]
 }
