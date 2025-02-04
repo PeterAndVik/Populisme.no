@@ -27,17 +27,19 @@ Populisme.no/
 ├── scrapers/                      # Scrapers to collect data
 │   ├── __init__.py                # Makes this folder a package
 │   ├── base_scraper.py            # The main scraper template
-│   ├── ssb_expenditure_scraper.py # Example scraper (SSB)
-│   ├── poll_scraper.py            # Example scraper (Polls)
+│   ├── ssb_expenditure_scraper.py # scraper (SSB)
+│   ├── poll_scraper.py            # scraper (Polls)
+│   ├── immigration_scraper.py     # scraper (innvandring)
 │
 ├── data/                          
 │   ├── raw/                        # Raw scraped data (CSV)
 │   ├── processed/                  # Cleaned data (CSV)
 │
-├── data_processing/                # Data cleaning & visualization
-│   ├── process_ssb_expenditures.py # Cleans & graphs SSB expenditure
-│   ├── process_poll_data.py        # Cleans & graphs poll data
+├── data_processing/                    # Data cleaning & visualization
+│   ├── process_ssb_expenditures.py     # Cleans & graphs SSB expenditure
+│   ├── process_poll_data.py            # Cleans & graphs poll data
 │   ├── process_aggregated_poll_data.py # Aggregates poll data & graphs
+│   ├── process_immigration_data.py     # Cleans & graphs immigration data
 │
 ├── graphs/                         # Saved HTML graphs
 │
