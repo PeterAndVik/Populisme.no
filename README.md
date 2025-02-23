@@ -20,7 +20,7 @@ The project is organized into clear folders:
 ```
 Populisme.no/
 │
-├── automation/                   # Automates scraping and processing
+├── automation/                    # Automates scraping and processing
 │    ├── run_pipeline.py           # Runs all scrapers automatically
 │    ├── update_graphs.json        # Updates list of graphs on flere grafer 
 │
