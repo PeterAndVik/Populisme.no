@@ -133,7 +133,7 @@ from utils.graph_utils import apply_common_styles  # Import our utility
 
 RAW_FILE = "data/raw/my_new_scraper_raw.csv"
 PROCESSED_FILE = "data/processed/my_new_scraper_clean.csv"
-GRAPH_HTML_FILE = "graphs/my_new_scraper.html"
+GRAPH_HTML_FILE = "graphs/graph_name.html"
 
 if not os.path.exists(RAW_FILE):
     print(f"⚠️ Raw file not found: {RAW_FILE}")
