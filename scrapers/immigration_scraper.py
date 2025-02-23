@@ -5,7 +5,7 @@ import pandas as pd
 # ✅ Ensure correct paths
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from scrapers.base_scraper import BaseScraper
+from utils.base_scraper import BaseScraper
 
 class ImmigrationScraper(BaseScraper):
     """

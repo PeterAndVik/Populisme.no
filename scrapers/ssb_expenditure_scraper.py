@@ -1,11 +1,10 @@
 import sys
 import os
-
+import pandas as pd
 # Legger til prosjektets rotmappe i sys.path slik at scrapers kan importeres riktig
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from scrapers.base_scraper import BaseScraper
-import pandas as pd
+from utils.base_scraper import BaseScraper
 
 class SSBExpenditureScraper(BaseScraper):
     """
