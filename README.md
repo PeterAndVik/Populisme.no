@@ -21,7 +21,7 @@ The project is organized into clear folders:
 Populisme.no/
 │
 ├── automation/                   # Automates scraping and processing
-│   ├── run_pipeline.py           # Runs all scrapers automatically
+│    ├── run_pipeline.py           # Runs all scrapers automatically
 │    ├── update_graphs.json        # Updates list of graphs on flere grafer 
 │
 ├── scrapers/                      # Scrapers to collect data
@@ -123,9 +123,13 @@ After adding a scraper, you need to clean the data and generate graphs.
 Copy this into your new processing file (`data_processing/process_my_new_scraper.py`) and follow the instructions:
 
 ```python
+import sys
 import os
 import pandas as pd
 import plotly.express as px
+# ✅ Ensure correct paths
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from utils.graph_utils import apply_common_styles  # Import our utility
 
 RAW_FILE = "data/raw/my_new_scraper_raw.csv"
 PROCESSED_FILE = "data/processed/my_new_scraper_clean.csv"
@@ -142,10 +146,30 @@ os.makedirs("data/processed", exist_ok=True)
 df.to_csv(PROCESSED_FILE, index=False)
 print(f"✅ Cleaned data saved: {PROCESSED_FILE}")
 
-fig = px.line(df, x="Date", y="Value", title="My New Data Over Time")
+# Generate an interactive line plot with Plotly
+fig = px.line(
+    df_polls,
+    x=df_polls.index,
+    y=df_polls.columns,
+    title="Political Party Support Over Time"
+)
+
+# Define a hover (What should be shown when someone hovers over a line)
+# example from politcal party data:
+common_hover = (
+    "Party: %{fullData.name}<br>"
+    "Date: %{x|%Y-%m-%d}<br>"
+    "Support: %{y:.2f}%<extra></extra>"
+)
+
+fig = apply_common_styles(fig, legend_title="Your title", hover_template=common_hover)
+
+# Ensure graphs directory exists and save the interactive HTML graph
 os.makedirs("graphs", exist_ok=True)
 fig.write_html(GRAPH_HTML_FILE)
 print(f"📊 Graph saved as HTML: {GRAPH_HTML_FILE}")
+
+# Show the graph for review
 fig.show()
 ```
 
