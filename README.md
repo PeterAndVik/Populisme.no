@@ -39,7 +39,7 @@ Populisme.no/
 │   ├── process_aggregated_poll_data.py # Aggregates poll data & graphs
 │   ├── process_immigration_data.py     # Cleans & graphs immigration data
 │
-├── utils/                      # Scrapers to collect data
+├── utils/                         # Custom packages (functions)
 │   ├── __init__.py                # Makes this folder a package
 │   ├── base_scraper.py            # The main scraper template
 │   ├── graph_utils.py             # used to make all graphs in same style
