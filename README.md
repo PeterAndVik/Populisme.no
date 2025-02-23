@@ -25,8 +25,6 @@ Populisme.no/
 │    ├── update_graphs.json        # Updates list of graphs on flere grafer 
 │
 ├── scrapers/                      # Scrapers to collect data
-│   ├── __init__.py                # Makes this folder a package
-│   ├── base_scraper.py            # The main scraper template
 │   ├── ssb_expenditure_scraper.py # scraper (SSB)
 │   ├── poll_scraper.py            # scraper (Polls)
 │   ├── immigration_scraper.py     # scraper (innvandring)
@@ -40,6 +38,11 @@ Populisme.no/
 │   ├── process_poll_data.py            # Cleans & graphs poll data
 │   ├── process_aggregated_poll_data.py # Aggregates poll data & graphs
 │   ├── process_immigration_data.py     # Cleans & graphs immigration data
+│
+├── utils/                      # Scrapers to collect data
+│   ├── __init__.py                # Makes this folder a package
+│   ├── base_scraper.py            # The main scraper template
+│   ├── graph_utils.py             # used to make all graphs in same style
 │
 ├── graphs/                         # Saved HTML graphs
 │
@@ -73,7 +76,7 @@ import pandas as pd
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from scrapers.base_scraper import BaseScraper
+from utils.base_scraper import BaseScraper
 
 class MyNewScraper(BaseScraper):
     """
